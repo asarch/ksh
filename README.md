@@ -1,0 +1,4 @@
+ksh
+===
+
+Korn shell settings.
