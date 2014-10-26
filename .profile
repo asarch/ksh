@@ -1,26 +1,29 @@
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-fi
-
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
+# Aqui se define la conducta del entorno
+# (locale, path, etc), tanto para las consolas como
+# para X11
 
 if [[ $( uname -s ) == "OpenBSD" ]]; then
 	PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin:/usr/games:.
-	export PATH HOME TERM
+
+	alias less='/usr/local/share/vim/vim73/macros/less.sh'
 
 	export JAVA_HOME=/usr/local/jdk-1.7.0
 	export PATH=${JAVA_HOME}/bin:${PATH}
+
+	export PATH HOME TERM
 fi
 
 export HOSTNAME=$( hostname )
 export ENV=$HOME/.kshrc
 
-export PERL5LIB=.:$HOME/lib
+export LANG=en_US.UTF-8
+export LC_ALL=${LANG}
+export LANGUAGE=${LANG}
+
+if [[ $( uname -s ) == 'Linux' ]]; then
+	alias ls='ls --color=always'
+	alias less='/usr/share/vim/vim73/macros/less.sh'
+fi
 
 echo
 fortune -a
