@@ -5,6 +5,7 @@ export EDITOR=vim
 export FCEDIT=$EDITOR
 export HISTFILE=$HOME/.$( basename $SHELL )_history
 export HISTSIZE=10240
+export VISUAL=$EDITOR
 
 export PS1='
 $USER@$HOSTNAME
@@ -12,7 +13,6 @@ $( date )
 $PWD
 
 [!]$ '
-export VISUAL=$EDITOR
 
 set -o vi
 set -o notify
