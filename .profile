@@ -6,7 +6,10 @@ export LC_ALL=${LANG}
 export LANGUAGE=${LANG}
 
 export PATH=$HOME/bin:${PATH}
+
+# Local library
 export PERL5LIB=.:${HOME}/lib
+export PYTHONPATH=.:$HOME/lib
 
 export HOSTNAME=$( hostname )
 export ENV=$HOME/.kshrc
